@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy as np
 import matplotlib
 import math
 import os
@@ -7,8 +7,8 @@ import IPython.display as ipd
 import librosa
 import librosa.display
 from keras.models import load_model
-model = load_model('mandarin_model_11_1_2020.h5')
- 
+model = load_model('mandarin_model.h5')
+
 
 def mp3tomfcc(file_path, max_pad):
   audio, sample_rate = librosa.core.load(file_path)
@@ -23,7 +23,7 @@ def mand_deepL(sound):
     myTest3 = sound
 
     mfccs2 = []
-    mfccs2.append(mp3tomfcc(myTest3, 60)) 
+    mfccs2.append(mp3tomfcc(myTest3, 60))
     mfccs2 = np.asarray(mfccs2)
     # print(mfccs2.shape)
 
